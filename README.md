@@ -1,4 +1,4 @@
-# CoastSat
+# CoastSat.Venice
 [![Last Commit](https://img.shields.io/github/last-commit/kvos/CoastSat)](
 https://github.com/kvos/CoastSat/commits/)
 ![GitHub issues](https://img.shields.io/github/issues/kvos/CoastSat)
@@ -8,32 +8,9 @@ https://github.com/kvos/CoastSat/commits/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2779293.svg)](https://doi.org/10.5281/zenodo.2779293)
 [![Join the chat at https://gitter.im/CoastSat/community](https://badges.gitter.im/spyder-ide/spyder.svg)](https://gitter.im/CoastSat/community)
 
+This is a fork of the CoastSat repository done by the Sea Level Changes group at Ca'Foscari University of Venice, for use with students and for research purposes. Please give credit to the original repository if you use this fork. We are just trying to build up on the exceptional work of K. Vos and his colleagues.
+
 CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
-
-![Alt text](https://github.com/kvos/CoastSat/blob/master/doc/example.gif)
-
-*Finding CoastSat useful? Show your support with a Github star — it’s a simple click that helps others discover it* ⭐️
-
-:point_right: Visit the [CoastSat website](http://coastsat.wrl.unsw.edu.au) to explore and download existing satellite-derived shoreline datasets generated with CoastSat in the Pacific and Atlantic basins.
-
-<details>
-<summary><strong>Latest updates</strong></summary>
-
-:arrow_forward: *(2024/10/02)*
-CoastSat v3.0: integration with [FES2022 global tide model](https://www.aviso.altimetry.fr/en/data/products/auxiliary-products/global-tide-fes/release-fes22.html) to perform **tidal correction** and **beach slope estimation** within CoastSat.
-
-:arrow_forward: *(2024/08/29)*
-CoastSat v2.7: reverse compatibility for file downloads (pre v2.6) and removed Collection 1 (deprecated, throws an error)
-
-:arrow_forward: *(2024/05/07)*
-CoastSat v2.6: added the tilename at the end of each image filename when downloading so that images can be separated by tiles if needed. Also a number of bug fixes on `matplotlib` and `numpy` from @2320sharon and @thekester.
-
-:arrow_forward: *(2024/04/26)*
-CoastSat v2.5: contributions from @2320sharon and @DanieTheron to improve the download updates and cloud masking for Landsat.
-
-</details>
-<details>
-<summary><strong>Additional toolkits and documentation</strong></summary>
 
  :point_right: Other repositories and extensions related to CoastSat: 
 
@@ -55,20 +32,6 @@ CoastSat v2.5: contributions from @2320sharon and @DanieTheron to improve the do
 - Beach slope estimation: https://doi.org/10.1029/2020GL088365 (preprint [here](https://www.essoar.org/doi/10.1002/essoar.10502903.2))
 - Beach slope dataset for Australia: https://doi.org/10.5194/essd-14-1345-2022
 </details>
-<details>
-<summary><strong>Project description</strong></summary>
-
-Satellite remote sensing can provide low-cost long-term shoreline data capable of resolving the temporal scales of interest to coastal scientists and engineers at sites where no in-situ field measurements are available. CoastSat enables the non-expert user to extract shorelines from Landsat 5, Landsat 7, Landsat 8, Landsat 9 and Sentinel-2 images.
-The shoreline detection algorithm implemented in CoastSat is optimised for sandy beach coastlines. It combines a sub-pixel border segmentation and an image classification component, which refines the segmentation into four distinct categories such that the shoreline detection is specific to the sand/water interface.
-
-The toolbox has the following functionalities:
-1. easy retrieval of satellite imagery spanning the user-defined region of interest and time period from Google Earth Engine, including state-of-the-art pre-processing steps (re-projecting the different bands, pansharpening, advanced cloud masking).
-2. automated extraction of shorelines from all the selected images using a sub-pixel resolution technique and options for quality-control.
-3. intersection of the 2D shorelines with user-defined shore-normal transects.
-4. tidal correction using tide/water levels and an estimate of the beach slope.
-5. post-processing of the shoreline time-series, despiking and seasonal averaging.
-6. Beach slope estimation using satellite-derived shorelines and predicted tides
-</details>
 
 ### Table of Contents
 
@@ -86,34 +49,35 @@ The toolbox has the following functionalities:
 ## 1. Installation<a name="introduction"></a>
 
 <details>
-<summary><strong>1.1 Create an environment with Mamba/Anaconda:</strong></summary>
+<summary><strong>1.1 Create an environment with Anaconda:</strong></summary>
 
-To run the toolbox you first need to install the required Python packages in an environment.You can do this with **Anaconda** or with **Mamba**. It is highly recommended to use Mamba. Go to https://github.com/conda-forge/miniforge and download Miniforge for your operating system.
+To run the toolbox you first need to install the required Python packages in an environment.You can do this with **Anaconda** . 
 
-Once you have it installed on your PC, open the Miniforge Prompt (in Mac and Linux, open a terminal window) and run the following commands to install the `coastsat` environment:
+Once you have it installed on your PC, open the Miniforge Prompt (in Mac and Linux, open a terminal window) and run the following commands (one by one) to install the `coastsat` environment:
+
 ```
-mamba create -n coastsat
-mamba activate coastsat
-mamba install geopandas -y
-mamba install earthengine-api scikit-image matplotlib astropy notebook -y
+conda create -n coastsatVenice
+conda activate coastsatVenice
+conda install geopandas -y
+conda install scikit-image matplotlib astropy notebook -y
+pip install earthengine-api
 pip install pyqt5 imageio-ffmpeg
-mamba install pyfes -y
+conda install -c conda-forge pytmd
 ```
 
-All the required packages have now been installed and are self-contained in an environment called `coastsat`. Always make sure that the environment is activated with:
+All the required packages have now been installed and are self-contained in an environment called `coastsatVenice`. Always make sure that the environment is activated with:
 
 ```
-mamba activate coastsat
+conda activate coastsat
 ```
 
-To confirm that you have successfully activated CoastSat, your terminal command line prompt should now start with `(coastsat)`.
+To confirm that you have successfully activated CoastSat, your terminal command line prompt should now start with `(coastsatVenice)`.
 
 :warning: **In case errors are raised** :warning:: clean things up with the following command before attempting to install `coastsat` again:
 ```
-mamba clean --all
-mamba update conda
+conda clean --all
+conda update conda
 ```
-If you are more used to **Anaconda** you can run the same commands in the Anaconda Prompt by replacing `mamba` with `conda`.
 
 If any problems with the installation, raise an issue.
 </details>
@@ -133,11 +97,9 @@ Then, go to https://cloud.google.com/sdk/docs/install and install the `gcloud CL
 
 An example of how to run the software in a Jupyter Notebook is provided in [example_jupyter.ipynb](./example_jupyter.ipynb). 
 
-If you prefer to use **Spyder** or other integrated development environments (IDEs), a Python script named [example.py](./example.py) is also included in the repository. If using **Spyder**, make sure that the Graphics Backend is set to **Automatic** and not **Inline** (as this mode doesn't allow to interact with the figures). To change this setting go under Preferences>IPython console>Graphics.
-
 <details>
 <summary><strong>How to run Jupyter Notebooks</strong></summary>
-To run a Jupyter Notebook, open the Miniforge prompt, activate your `coastsat` environment with `mamba activate coastsat`, and then run type `jupyter lab`.
+To run a Jupyter Notebook, open the Miniforge prompt, activate your `coastsatVenice` environment with `mamba activate coastsat`, and then run type `jupyter lab`.
 
 A web browser will open with the JupyterLab interface. Browse to the directory where you downloaded CoastSat and click on the file `example_jupyter.ipynb`. The notebook will open. A Jupyter Notebook combines formatted text and code. To run the code, place your cursor inside one of the code sections and click on the `run cell` button (or press `Shift` + `Enter`) and progress forward.
 
@@ -157,34 +119,6 @@ To retrieve from the GEE server the available satellite images cropped around th
 - (optional) `S2tile`: for Sentinel-2 only, this parameter let's you specify the tile from which you'd like to crop your ROI, this avoids having many duplicates in the Sentinel-2 collection. For example `inputs['S2tile'] = '56HLH'` is the S2 tile for Sydney, check [this website](https://eatlas.org.au/data/uuid/f7468d15-12be-4e3f-a246-b2882a324f59) to view all tiles and find the one covering your ROI.
 
 The call `metadata = SDS_download.retrieve_images(inputs)` will launch the retrieval of the images and store them as .TIF files (under */filepath/sitename*). The metadata contains the exact time of acquisition (in UTC time) of each image, its projection and its geometric accuracy. If the images have already been downloaded previously and the user only wants to run the shoreline detection, the metadata can be loaded directly by running `metadata = SDS_download.get_metadata(inputs)`.
-
-The inputs below will download all the images of Narrabeen acquired by since the start of 2024 by Landsat and Sentinel-2.
-<details>
-<summary><strong>Inputs download example</strong></summary>
-
-```
-# region of interest (longitude, latitude)
-polygon = [[[151.2957545, -33.7012561],
-            [151.297557, -33.7388075],
-            [151.312234, -33.7390216],
-            [151.311204, -33.701399],
-            [151.2957545, -33.7012561]]]
-# date range
-dates = ['2024-01-01', '2025-01-01']
-# satellite missions ['L5','L7','L8','L9','S2']
-sat_list = ['L8','L9','S2']
-# name of the site
-sitename = 'NARRA'
-# directory where the data will be stored
-filepath = os.path.join(os.getcwd(), 'data')
-# put all the inputs into a dictionnary
-inputs = {'polygon': polygon, 'dates': dates, 'sat_list': sat_list,
-          'sitename': sitename, 'filepath':filepath}
-# download images
-metadata = SDS_download.retrieve_images(inputs)
-```
-
-</details>
 
 ### 2.2 Shoreline detection<a name="detection"></a>
 

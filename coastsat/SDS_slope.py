@@ -19,7 +19,7 @@ from scipy import signal as ssignal
 from scipy import interpolate as sinterpolate
 from astropy.timeseries import LombScargle
 import pytz
-import pyfes
+#import pyfes
 import pdb
 
 ###################################################################################################
