@@ -80,7 +80,7 @@ This repository makes use of the pyTMD library to make tidal predictions, that a
 
 3. Download [WinSCP](https://winscp.net/eng/download.php) or your favourite SFTP software and click use SFTP link (sftp://ftp-access.aviso.altimetry.fr:2221/auxiliary/tide_model) to create a connection.
 
-4. Then download under /fes2022b the folders /load_tide and /ocean_tide (not /ocean_tide_extrapolate). Download all the components (34 NETCDF files) and unzip them. Save the folders /load_tide and /ocean_tide folders inside the /FES_2022 subfolder inside /TidalModels. Make sure that these two folders are called exactly like ocean_tide and load_tide, rename them if necessary.
+4. Then download under /fes2022b the folders /load_tide and /ocean_tide (not /ocean_tide_extrapolate). Download all the components (34 NETCDF files) and unzip them. Save the folders /load_tide and /ocean_tide folders inside the /FES_2022/fes2022b subfolder inside /TidalModels. Make sure that these two folders are called exactly like ocean_tide and load_tide, rename them if necessary.
    
 ![image](https://github.com/user-attachments/assets/39c00bf6-2949-4321-83ed-03b11a39c0b7)
 
