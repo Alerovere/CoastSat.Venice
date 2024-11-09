@@ -29,6 +29,8 @@ CoastSat is an open-source software toolkit written in Python that enables users
 
 ## Installation
 
+First, download CoastSat.Venice into your hard drive. All the data will be saved in the "Data" folder.
+
 <summary><strong> Create an environment with Anaconda:</strong></summary>
 
 To run the toolbox you first need to install the required Python packages in an environment.You can do this with **Anaconda** . 
