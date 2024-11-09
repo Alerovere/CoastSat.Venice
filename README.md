@@ -29,9 +29,10 @@ CoastSat is an open-source software toolkit written in Python that enables users
 
 ## Installation
 
-First, download CoastSat.Venice into your hard drive. All the data will be saved in the "Data" folder.
+First, download CoastSat.Venice and unzip it into your hard drive. All the data will be saved in the "Data" folder. 
+Go to [this website](https://www.anaconda.com/download/success) and install Anaconda.
 
-<summary><strong> Create an environment with Anaconda:</strong></summary>
+### Create an environment with Anaconda
 
 To run the toolbox you first need to install the required Python packages in an environment.You can do this with **Anaconda** . 
 
@@ -61,17 +62,14 @@ conda clean --all
 conda update conda
 ```
 
-<summary><strong>Activate Google Earth Engine Python API:</strong></summary>
+### Activate Google Earth Engine Python API
 
 First, create a Google Earth Engine project at https://signup.earthengine.google.com/. 
 Then, go to https://cloud.google.com/sdk/docs/install and install the `gcloud CLI`. After you have installed it will automatically launch and let you authenticate with your GEE account (or personal gmail).
 
 :warning: if you're finding that you're always asked to authenticate, open the gloud CLI and run this command: `gcloud auth application-default login` to set a default authentication on your machine.
-</details>
 
-:white_check_mark: If you completed those two steps you are ready to start using CoastSat!
-
-<summary><strong>Download the FES 2022 tidal model</strong></summary>
+Download the FES 2022 tidal model
 This repository makes use of the pyTMD library to make tidal predictions, that are then used to correct the satellite-derived shoreline for tides. For this, you will need to follow these steps:
 
 1. Go to https://www.aviso.altimetry.fr/ and create an account, then login. Then go to https://www.aviso.altimetry.fr/en/data/data-access/registration-form.html and fill the form, ticking **FES (Finite Element Solution - Oceanic Tides Heights)**.
@@ -82,9 +80,12 @@ This repository makes use of the pyTMD library to make tidal predictions, that a
 
 3. Download [WinSCP](https://winscp.net/eng/download.php) or your favourite SFTP software and click use SFTP link (sftp://ftp-access.aviso.altimetry.fr:2221/auxiliary/tide_model) to create a connection.
 
-4. Then download under /fes2022b the folders /load_tide and /ocean_tide (not /ocean_tide_extrapolate). Download all the components (34 NETCDF files) and unzip them. Save the folders /load_tide and /ocean_tide folders inside the \FES_2022 subfolder inside \TidalModels
+4. Then download under /fes2022b the folders /load_tide and /ocean_tide (not /ocean_tide_extrapolate). Download all the components (34 NETCDF files) and unzip them. Save the folders /load_tide and /ocean_tide folders inside the /FES_2022 subfolder inside /TidalModels. Make sure that these two folders are called exactly like ocean_tide and load_tide, rename them if necessary.
    
 ![image](https://github.com/user-attachments/assets/39c00bf6-2949-4321-83ed-03b11a39c0b7)
+
+
+:white_check_mark: If you completed the steps above, you are ready to start using CoastSat.Venice! Open a Jupyter notebook and run the file **"Extract_Shorelines_Tide.ipynb"**.
 
 ## References and Datasets
 
