@@ -1,8 +1,8 @@
 # CoastSat.Venice
 
-This is a fork of the CoastSat repository done by the Sea Level Changes group at Ca'Foscari University of Venice, for use with students and for research purposes. Please give credit to the original repository if you use this fork. We are just trying to build up on the exceptional work of K. Vos and his colleagues.
+This is a fork of the CoastSat repository done by the Sea Level Changes group at Ca'Foscari University of Venice, for use with students and for research purposes. <ins>Please give credit to the original repository</ins> if you use this fork. We are just trying to build up on the exceptional work of K. Vos and his colleagues.
 
-For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git) 
+For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git). The documentation below is just an extract of the extensive documentation by Vos et al.
 
 CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
 
@@ -68,6 +68,21 @@ Then, go to https://cloud.google.com/sdk/docs/install and install the `gcloud CL
 </details>
 
 :white_check_mark: If you completed those two steps you are ready to start using CoastSat!
+
+<summary><strong>Download the FES 2022 tidal model</strong></summary>
+This repository makes use of the pyTMD library to make tidal predictions, that are then used to correct the satellite-derived shoreline for tides. For this, you will need to follow these steps:
+
+1. Go to https://www.aviso.altimetry.fr/ and create an account, then login. Then go to https://www.aviso.altimetry.fr/en/data/data-access/registration-form.html and fill the form, ticking **FES (Finite Element Solution - Oceanic Tides Heights)**.
+
+2. Navigate to My Products (https://www.aviso.altimetry.fr/en/my-aviso-plus/my-products.html) and the FES product should be there as shown here:
+ 
+![image](https://github.com/user-attachments/assets/88ffd3ea-ee91-4faa-96e2-fe8982290843)
+
+3. Download [WinSCP](https://winscp.net/eng/download.php) or your favourite SFTP software and click use SFTP link (sftp://ftp-access.aviso.altimetry.fr:2221/auxiliary/tide_model) to create a connection.
+
+4. Then download under /fes2022b the folders /load_tide and /ocean_tide (not /ocean_tide_extrapolate). Download all the components (34 NETCDF files) and unzip them. Save the folders /load_tide and /ocean_tide folders inside the \FES_2022 subfolder inside \TidalModels
+   
+![image](https://github.com/user-attachments/assets/39c00bf6-2949-4321-83ed-03b11a39c0b7)
 
 ## References and Datasets
 
