@@ -45,7 +45,9 @@ conda install geopandas -y
 conda install scikit-image matplotlib astropy notebook -y
 pip install earthengine-api
 pip install pyqt5 imageio-ffmpeg
+pip install ipyleaflet geojson
 conda install -c conda-forge pytmd
+pip install --upgrade --upgrade-strategy only-if-needed copernicusmarine windrose cartopy
 ```
 
 All the required packages have now been installed and are self-contained in an environment called `coastsatVenice`. Always make sure that the environment is activated with:
@@ -86,6 +88,13 @@ This repository makes use of the pyTMD library to make tidal predictions, that a
 
 
 :white_check_mark: If you completed the steps above, you are ready to start using CoastSat.Venice! Open a Jupyter notebook and run the file **"Extract_Shorelines_Tide.ipynb"**.
+
+## How to use
+CoastSat.Venice is organised in different notebooks that will need to be run in cascade for everything to work properly.
+
+1. **Calculate_Tides.ipynb**: Extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model.
+2. **Extract_Shorelines_Tide.ipynb.ipynb**: Use CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account.
+3. **Download_Wave_Data.ipynb**: Downlaod wave data from the Copernicus Marine data hub. Requires subscription to the Copernicus Marine Service
 
 ## References and Datasets
 
