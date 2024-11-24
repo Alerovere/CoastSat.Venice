@@ -52,6 +52,10 @@ def create_directories(filepath, sitename, create_additional_folders=False):
         "Tidal Data": os.path.join(filepath, sitename, "water_levels"),
         "Image Outputs": os.path.join(filepath, sitename, "Output/img"),
         "Data Outputs": os.path.join(filepath, sitename, "Output/data"),
+        "Runup": os.path.join(filepath, sitename, "Output/Runup"),
+        "Runup": os.path.join(filepath, sitename, "Output/Runup/data"),
+        "Runup": os.path.join(filepath, sitename, "Output/Runup/img"),
+
     }
 
     # Add additional directories if requested
@@ -60,8 +64,12 @@ def create_directories(filepath, sitename, create_additional_folders=False):
             "Waves": os.path.join(filepath, sitename, "Waves"),
             "Waves Images": os.path.join(filepath, sitename, "Waves", "img"),
             "Waves Data": os.path.join(filepath, sitename, "Waves", "data"),
+            "Runup": os.path.join(filepath, sitename,"Runup"),
+            "Runup Data": os.path.join(filepath, sitename,"Runup","data"),
+            "Runup Images": os.path.join(filepath, sitename,"Runup","img"),
         })
 
     for name, path in directories.items():
         os.makedirs(path, exist_ok=True)
         print(f"Directory created or already exists: {path}")
+

@@ -47,7 +47,8 @@ pip install earthengine-api
 pip install pyqt5 imageio-ffmpeg
 pip install ipyleaflet geojson
 conda install -c conda-forge pytmd
-pip install --upgrade --upgrade-strategy only-if-needed copernicusmarine windrose cartopy
+pip install --upgrade --upgrade-strategy only-if-needed copernicusmarine windrose cartopy seaborn
+pip install --no-deps py-wave-ruup
 ```
 
 All the required packages have now been installed and are self-contained in an environment called `coastsatVenice`. Always make sure that the environment is activated with:
@@ -92,9 +93,10 @@ This repository makes use of the pyTMD library to make tidal predictions, that a
 ## How to use
 CoastSat.Venice is organised in different notebooks that will need to be run in cascade for everything to work properly.
 
-1. **Calculate_Tides.ipynb**: Extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model.
-2. **Extract_Shorelines_Tide.ipynb.ipynb**: Use CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account.
+1. **Calculate_Tides.ipynb**: Extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model
+2. **Extract_Shorelines_Tide.ipynb.ipynb**: Use CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account
 3. **Download_Wave_Data.ipynb**: Downlaod wave data from the Copernicus Marine data hub. Requires subscription to the Copernicus Marine Service
+4. **Calculate_Runup.ipynb**: Use the wave, tidal data and slope as inputs to the py-wave-runup tool and calculate maximum and minimum runup values
 
 ## References and Datasets
 
