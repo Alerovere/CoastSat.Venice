@@ -74,6 +74,8 @@ CoastSat.Venice is organised in different notebooks that will need to be run in 
 ### Calculate_Tides.ipynb
 In this notebook, the code allows the user to select a point interactively, and extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model.
 
+[!image](https://github.com/Alerovere/CoastSat.Venice/blob/master/Data/Caleta_Olivia/water_levels/Caleta_Olivia_tide_timeseries.jpg)
+
 ### Extract_Shorelines_Tide
 In this notebook, the code uses CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account. For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git). The documentation below is just an extract of the extensive documentation by Vos et al. CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
 
