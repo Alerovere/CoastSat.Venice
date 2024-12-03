@@ -74,10 +74,14 @@ CoastSat.Venice is organised in different notebooks that will need to be run in 
 ### Calculate_Tides.ipynb
 In this notebook, the code allows the user to select a point interactively, and extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model.
 
-[!image](https://github.com/Alerovere/CoastSat.Venice/blob/master/Data/Caleta_Olivia/water_levels/Caleta_Olivia_tide_timeseries.jpg)
+![image](Data/Caleta_Olivia/water_levels/Caleta_Olivia_tide_timeseries.jpg)
+**Tidal data extracted from the FES2022 tidal model for the site of interest**
 
 ### Extract_Shorelines_Tide
 In this notebook, the code uses CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account. For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git). The documentation below is just an extract of the extensive documentation by Vos et al. CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
+
+![image](Data/Caleta_Olivia/slope_estimation/Slope_sampling.jpg)
+**Beach slope extracted at different transects along thea area of interest**
 
 **Publications describing the CoastSat satellite-derived shorelines:**
 
@@ -91,6 +95,9 @@ In this notebook, the code uses CoastSat functions to download Landsat and Senti
 
 ### Download_Wave_Data.ipynb
 This notebook allows selecteing an area within which wave data from the Copernicus Marine data hub are downloaded. This notebook requires subscription to the Copernicus Marine Service. The data is then plotted and filtered for successive use in runup calculations.
+
+![image](Data/Caleta_Olivia/Waves/img/Map_with_Windrose_Buoy.jpg)
+**Wave data extracted in the center of the Area of Interest**
 
 ### Calculate_Runup.ipynb
 Use the wave, tidal data and slope calculated in the previous steps as inputs to the py-wave-runup tool and calculate maximum and minimum runup values in historical times, coupling wave data to the water level at which the waves impacted the coast. Then, a synthetic runup dataset is calculated by resampling tides and wave data to reproduce one million possible water levels at which waves might impact the coast. This is considered representative of a long-term runup database.
