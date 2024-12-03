@@ -2,30 +2,7 @@
 
 This is a fork of the CoastSat repository done by the Sea Level Changes group at Ca'Foscari University of Venice, for use with students and for research purposes. <ins>Please give credit to the original repository</ins> if you use this fork. We are just trying to build up on the exceptional work of K. Vos and his colleagues.
 
-For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git). The documentation below is just an extract of the extensive documentation by Vos et al.
-
-CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
-
- :point_right: Other repositories and extensions related to CoastSat: 
-
-- [CoastSeg](https://github.com/dbuscombe-usgs/CoastSeg): an interactive toolbox for downloading satellite imagery, applying image segmentation models, mapping shoreline positions and more.
-- [CoastSat.slope](https://github.com/kvos/CoastSat.slope): estimates the beach-face slope from the satellite-derived shorelines obtained with CoastSat.
-- [CoastSat.PlanetScope](https://github.com/ydoherty/CoastSat.PlanetScope): shoreline extraction for PlanetScope Dove imagery (near-daily since 2017 at 3m resolution).
-- [SDS_Benchmark](https://github.com/SatelliteShorelines/SDS_Benchmark): testbed for satellite-derived shorelines mapping algorithms and validation against benchmark datasets.
-- [CoastSat.islands](https://github.com/mcuttler/CoastSat.islands): 2D planform measurements for small reef islands.
-- [CoastSat.Maxar](https://github.com/kvos/CoastSat.Maxar): shoreline extraction on Maxar World-View images (in progress)
-- [InletTracker](https://github.com/VHeimhuber/InletTracker): monitoring of intermittent open/close estuary entrances.
-- [VedgeSat](https://github.com/fmemuir/COASTGUARD/tree/master): monitoring vegetation lines.
-
- :point_right: Publications describing the CoastSat satellite-derived shorelines:
-
-- Shoreline detection algorithm: https://doi.org/10.1016/j.envsoft.2019.104528 (Open Access)
-- Accuracy assessment: https://doi.org/10.1016/j.coastaleng.2019.04.004
-- Challenges in meso-macrotidal environments: https://doi.org/10.1016/j.geomorph.2021.107707
-- Basin-scale shoreline mapping (Paficic): https://www.nature.com/articles/s41561-022-01117-8 (The Conversation article [here](https://theconversation.com/millions-of-satellite-images-reveal-how-beaches-around-the-pacific-vanish-or-replenish-in-el-nino-and-la-nina-years-198505))
-- Beach slope estimation: https://doi.org/10.1029/2020GL088365 (preprint [here](https://www.essoar.org/doi/10.1002/essoar.10502903.2))
-- Beach slope dataset for Australia: https://doi.org/10.5194/essd-14-1345-2022
-</details>
+This repository was used as an update of [this work](https://github.com/Alerovere/Beach-Ridges-Runup.git), which was initially carried out for the data retrieval and analysis presented in [this preprint](https://eartharxiv.org/repository/view/7534/). 
 
 ## Installation
 
@@ -89,16 +66,32 @@ This repository makes use of the pyTMD library to make tidal predictions, that a
    
 ![image](https://github.com/user-attachments/assets/39c00bf6-2949-4321-83ed-03b11a39c0b7)
 
-
 :white_check_mark: If you completed the steps above, you are ready to start using CoastSat.Venice! Open a Jupyter notebook and run the file **"Extract_Shorelines_Tide.ipynb"**.
 
 ## How to use
-CoastSat.Venice is organised in different notebooks that will need to be run in cascade for everything to work properly.
+CoastSat.Venice is organised in different notebooks that will need to be run in cascade for everything to work properly. Hereafter, we describe them one by one.
 
-1. **Calculate_Tides.ipynb**: Extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model
-2. **Extract_Shorelines_Tide.ipynb.ipynb**: Use CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account
-3. **Download_Wave_Data.ipynb**: Downlaod wave data from the Copernicus Marine data hub. Requires subscription to the Copernicus Marine Service
-4. **Calculate_Runup.ipynb**: Use the wave, tidal data and slope as inputs to the py-wave-runup tool and calculate maximum and minimum runup values
+### Calculate_Tides.ipynb
+In this notebook, the code allows the user to select a point interactively, and extract tides from the FES 2022 tidal model. Requires subscription to AVISO+ and download of the FES tidal model.
+
+### Extract_Shorelines_Tide
+In this notebook, the code uses CoastSat functions to download Landsat and Sentinel data, calculate shoreline trands and extract slopes. Requires a Google Earth Engine account. For extensive documentation, see the original repository [**here**](https://github.com/kvos/CoastSat.git). The documentation below is just an extract of the extensive documentation by Vos et al. CoastSat is an open-source software toolkit written in Python that enables users to obtain time-series of shoreline position at any coastline worldwide from 40 years (and growing) of publicly available satellite imagery (Landsat and Sentinel-2).
+
+**Publications describing the CoastSat satellite-derived shorelines:**
+
+- Shoreline detection algorithm: https://doi.org/10.1016/j.envsoft.2019.104528 (Open Access)
+- Accuracy assessment: https://doi.org/10.1016/j.coastaleng.2019.04.004
+- Challenges in meso-macrotidal environments: https://doi.org/10.1016/j.geomorph.2021.107707
+- Basin-scale shoreline mapping (Pacific): https://www.nature.com/articles/s41561-022-01117-8 (The Conversation article [here](https://theconversation.com/millions-of-satellite-images-reveal-how-beaches-around-the-pacific-vanish-or-replenish-in-el-nino-and-la-nina-years-198505))
+- Beach slope estimation: https://doi.org/10.1029/2020GL088365 (preprint [here](https://www.essoar.org/doi/10.1002/essoar.10502903.2))
+- Beach slope dataset for Australia: https://doi.org/10.5194/essd-14-1345-2022
+</details>
+
+### Download_Wave_Data.ipynb
+This notebook allows selecteing an area within which wave data from the Copernicus Marine data hub are downloaded. This notebook requires subscription to the Copernicus Marine Service. The data is then plotted and filtered for successive use in runup calculations.
+
+### Calculate_Runup.ipynb
+Use the wave, tidal data and slope calculated in the previous steps as inputs to the py-wave-runup tool and calculate maximum and minimum runup values in historical times, coupling wave data to the water level at which the waves impacted the coast. Then, a synthetic runup dataset is calculated by resampling tides and wave data to reproduce one million possible water levels at which waves might impact the coast. This is considered representative of a long-term runup database.
 
 ## References and Datasets
 
@@ -124,16 +117,7 @@ This section provides a list of references that use the CoastSat toolbox as well
 
 ### Datasets
 
-- Time-series of shoreline change along the Pacific Rim (v1.4) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7758183
-
-- Time-series of shoreline change along the U.S. Atlantic coast: U.S. Geological Survey data release, https://doi.org/10.5066/P9BQQTCI.
-
-- Time-series of shoreline change for the Klamath River Littoral Cell (California) (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7641757
-
-- Beach-face slope dataset for Australia (Version 2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7272538
-
 - Training dataset used for pixel-wise classification in CoastSat (initial version): https://doi.org/10.5281/zenodo.3334147
 
-
 ## Acknowledgments
-This work is based on the CoasSat tool. Please give credit to the original repository if you use this work, and make sure you visit [the original repository](https://github.com/kvos/CoastSat) and cite the relevant papers mentioned above. The modifications done within CoastSat.Venice were done in the framework of the WARMCOASTS project, led by A. Rovere at Ca' Foscari University of Venice. This software is part of a project that has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (Grant agreement No. ERC-StG-802414)
+This work is based on the CoasSat tool. Please give credit to the original repository if you use this work, and make sure you visit [the original repository](https://github.com/kvos/CoastSat) and cite the relevant papers mentioned above. The modifications done within CoastSat.Venice were done in the framework of the WARMCOASTS project, led by A. Rovere at Ca' Foscari University of Venice. This software is part of a project that has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (Grant agreement No. ERC-StG-802414). The code in this repository has been improved and refined with the help of ChatGPT, an AI assistant, for debugging and optimization purposes.
