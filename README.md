@@ -49,6 +49,8 @@ pip install ipyleaflet geojson
 conda install -c conda-forge pytmd
 pip install --upgrade --upgrade-strategy only-if-needed copernicusmarine windrose cartopy seaborn
 pip install --no-deps py-wave-ruup
+pip install siphon
+pip install "dask[distributed]" --upgrade
 ```
 
 All the required packages have now been installed and are self-contained in an environment called `coastsatVenice`. Always make sure that the environment is activated with:

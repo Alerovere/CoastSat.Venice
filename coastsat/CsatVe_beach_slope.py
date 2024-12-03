@@ -6,34 +6,44 @@ import os
 
 # Function to generate random samples
 def generate_random_samples(slope_df, length, seed=None):
+    if seed is not None:
+        np.random.seed(seed)
     samples = []
     for _ in range(length):
-        # Step 1: Randomly sample a transect
         transect = slope_df.sample(1)
-        
-        # Step 2: Generate a random value within the CI bounds for the sampled transect
         lower = transect['CI_Lower'].values[0]
         upper = transect['CI_Upper'].values[0]
         median = transect['Slope'].values[0]
-        
-        # Randomly sample a value weighted towards the median
         random_value = np.random.triangular(left=lower, mode=median, right=upper)
-        
         samples.append({
             'Transect': transect['Transect'].values[0],
             'Sampled_Value': random_value
         })
-    
     return pd.DataFrame(samples)
 
-def beach_slope_plot(slope_df, sampled_df,images_path):
+def adjust_bounds(row):
+    epsilon = 1e-6
+    if row['CI_Lower'] == row['CI_Upper']:
+        row['CI_Lower'] -= epsilon
+        row['CI_Upper'] += epsilon
+    if row['Slope'] <= row['CI_Lower']:
+        row['Slope'] = row['CI_Lower'] + epsilon
+    if row['Slope'] >= row['CI_Upper']:
+        row['Slope'] = row['CI_Upper'] - epsilon
+    return row
+
+
+def beach_slope_plot(slope_df, sampled_df, images_path):
     plt.figure(figsize=(8, 4))
+
+    # Number of samples to match the sampled_df size
+    num_samples = len(sampled_df)
 
     # Plot original distributions as lines
     for _, row in slope_df.iterrows():
         # Generate a valid array for the triangular distribution
         triangular_samples = np.random.triangular(
-            row['CI_Lower'], row['Slope'], row['CI_Upper'], size=1000
+            row['CI_Lower'], row['Slope'], row['CI_Upper'], size=num_samples
         )
         
         # Ensure the array contains valid numeric values

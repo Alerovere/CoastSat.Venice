@@ -1,5 +1,21 @@
-# Ignore all files in the folder
+# Ignore everything globally
 *
 
-# Exclude the .gitignore file itself (so the folder stays in Git)
+# Do not ignore the .gitignore file itself
 !.gitignore
+
+# Do not ignore the Caleta_Olivia folder and its contents
+!Caleta_Olivia/
+!Caleta_Olivia/**
+
+# Ignore specific subfolders inside Caleta_Olivia
+Caleta_Olivia/Output/data/Caleta_Olivia/jpg_files/
+Caleta_Olivia/Output/data/Caleta_Olivia/L5/
+Caleta_Olivia/Output/data/Caleta_Olivia/L7/
+Caleta_Olivia/Output/data/Caleta_Olivia/L8/
+Caleta_Olivia/Output/data/Caleta_Olivia/L9/
+Caleta_Olivia/Output/data/Caleta_Olivia/S2/
+
+# Ignore specific files
+Caleta_Olivia/Runup/data/runup_synth_total.csv
+Caleta_Olivia/Waves/data/Caleta_Olivia_GLOBAL_REANALYSIS_WAV_001_032.nc
