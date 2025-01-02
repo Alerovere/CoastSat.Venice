@@ -105,6 +105,9 @@ Use the wave, tidal data and slope calculated in the previous steps as inputs to
 ![image](Data/Caleta_Olivia/Runup/img/two_panel_runup.jpg)
 **Runup calculated for historical waves and synthetic wave dataset**
 
+## Reporting form in LaTeX
+Inside the `Reporting` folder, there is a LaTeX template that writes a simple report on wave runup from the images and data calculated by the script.
+
 ## References and Datasets
 
 This section provides a list of references that use the CoastSat toolbox as well as existing shoreline datasets extracted with CoastSat.

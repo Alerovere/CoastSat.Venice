@@ -1,0 +1,112 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Atkinson, Power, Moura, Hammond, Callaghan,
+  and Baldock}{Atkinson et~al.}{2017}]{ATKINSON201715}
+Atkinson, A.~L., H.~E. Power, T.~Moura, T.~Hammond, D.~P. Callaghan, and T.~E.
+  Baldock (2017).
+\newblock {Assessment of runup predictions by empirical models on non-truncated
+  beaches on the south-east Australian coast}.
+\newblock {\em Coastal Engineering\/}~{\em 119}, 15--31.
+
+\bibitem[\protect\citeauthoryear{Carrere, Lyard, Cancet, Allain, Dabat,
+  Fouchet, Sahuc, Faugere, Dibarboure, and Picot}{Carrere
+  et~al.}{2022}]{carrere2022new}
+Carrere, L., F.~Lyard, M.~Cancet, D.~Allain, M.-L. Dabat, E.~Fouchet, E.~Sahuc,
+  Y.~Faugere, G.~Dibarboure, and N.~Picot (2022).
+\newblock A new barotropic tide model for global ocean: Fes2022.
+\newblock In {\em 2022 Ocean Surface Topography Science Team Meeting}, pp.\
+  ~43.
+
+\bibitem[\protect\citeauthoryear{Holman}{Holman}{1986}]{HOLMAN1986527}
+Holman, R. (1986).
+\newblock {Extreme value statistics for wave run-up on a natural beach}.
+\newblock {\em Coastal Engineering\/}~{\em 9\/}(6), 527--544.
+
+\bibitem[\protect\citeauthoryear{Law-Chune, Aouf, Dalphinet, Levier, Drillet,
+  and Drevillon}{Law-Chune et~al.}{2021}]{law2021waverys}
+Law-Chune, S., L.~Aouf, A.~Dalphinet, B.~Levier, Y.~Drillet, and M.~Drevillon
+  (2021).
+\newblock {WAVERYS: a CMEMS global wave reanalysis during the altimetry
+  period}.
+\newblock {\em Ocean Dynamics\/}~{\em 71}, 357--378.
+
+\bibitem[\protect\citeauthoryear{Leaman, Beuzen, and Goldstein}{Leaman
+  et~al.}{2020}]{chris_leaman_2020_3629949}
+Leaman, C., T.~Beuzen, and E.~B. Goldstein (2020).
+\newblock chrisleaman/py-wave-runup: v0.1.10.
+
+\bibitem[\protect\citeauthoryear{Lellouche, Greiner, Le~Galloudec, Garric,
+  Regnier, Drevillon, Benkiran, Testut, Bourdalle-Badie, Gasparin,
+  et~al.}{Lellouche et~al.}{2018}]{lellouche2018recent}
+Lellouche, J.-M., E.~Greiner, O.~Le~Galloudec, G.~Garric, C.~Regnier,
+  M.~Drevillon, M.~Benkiran, C.-E. Testut, R.~Bourdalle-Badie, F.~Gasparin,
+  et~al. (2018).
+\newblock {Recent updates to the Copernicus Marine Service global ocean
+  monitoring and forecasting real-time 1/12 deg high-resolution system}.
+\newblock {\em Ocean Science\/}~{\em 14\/}(5), 1093--1126.
+
+\bibitem[\protect\citeauthoryear{Nielsen}{Nielsen}{2009}]{nielsen2009coastal}
+Nielsen, P. (2009).
+\newblock {\em {Coastal and estuarine processes}}, Volume~29.
+\newblock World Scientific Publishing Company.
+
+\bibitem[\protect\citeauthoryear{Passarella, Goldstein, De~Muro, and
+  Coco}{Passarella et~al.}{2018}]{passarella2018use}
+Passarella, M., E.~B. Goldstein, S.~De~Muro, and G.~Coco (2018).
+\newblock {The use of genetic programming to develop a predictor of swash
+  excursion on sandy beaches}.
+\newblock {\em Natural Hazards and Earth System Sciences\/}~{\em 18\/}(2),
+  599--611.
+
+\bibitem[\protect\citeauthoryear{Power, Gharabaghi, Bonakdari, Robertson,
+  Atkinson, and Baldock}{Power et~al.}{2019}]{POWER201947}
+Power, H.~E., B.~Gharabaghi, H.~Bonakdari, B.~Robertson, A.~L. Atkinson, and
+  T.~E. Baldock (2019).
+\newblock Prediction of wave runup on beaches using gene-expression programming
+  and empirical relationships.
+\newblock {\em Coastal Engineering\/}~{\em 144}, 47--61.
+
+\bibitem[\protect\citeauthoryear{Rovere}{Rovere}{2024}]{alessio_rovere_2024_14543991}
+Rovere, A. (2024).
+\newblock Beach ridges runup models for paleo sea level applications.
+
+\bibitem[\protect\citeauthoryear{Ruggiero, Komar, McDougal, Marra, and
+  Beach}{Ruggiero et~al.}{2001}]{ruggiero2001wave}
+Ruggiero, P., P.~D. Komar, W.~G. McDougal, J.~J. Marra, and R.~A. Beach (2001).
+\newblock {Wave runup, extreme water levels and the erosion of properties
+  backing beaches}.
+\newblock {\em Journal of coastal research\/}, 407--419.
+
+\bibitem[\protect\citeauthoryear{Senechal, Coco, Bryan, and Holman}{Senechal
+  et~al.}{2011}]{senechal2011wave}
+Senechal, N., G.~Coco, K.~R. Bryan, and R.~A. Holman (2011).
+\newblock {Wave runup during extreme storm conditions}.
+\newblock {\em Journal of Geophysical Research: Oceans\/}~{\em 116\/}(C7).
+
+\bibitem[\protect\citeauthoryear{Stockdon, Holman, Howd, and
+  Sallenger}{Stockdon et~al.}{2006}]{STOCKDON2006573}
+Stockdon, H.~F., R.~A. Holman, P.~A. Howd, and A.~H. Sallenger (2006).
+\newblock {Empirical parameterization of setup, swash, and runup}.
+\newblock {\em Coastal Engineering\/}~{\em 53\/}(7), 573--588.
+
+\bibitem[\protect\citeauthoryear{Vos, Harley, Splinter, Walker, and Turner}{Vos
+  et~al.}{2020}]{Coastsat_slope}
+Vos, K., M.~D. Harley, K.~D. Splinter, A.~Walker, and I.~L. Turner (2020).
+\newblock {Beach Slopes From Satellite-Derived Shorelines}.
+\newblock {\em Geophysical Research Letters\/}~{\em 47\/}(14), e2020GL088365.
+
+\bibitem[\protect\citeauthoryear{Vos, Splinter, Harley, Simmons, and
+  Turner}{Vos et~al.}{2019}]{Coastsat}
+Vos, K., K.~D. Splinter, M.~D. Harley, J.~A. Simmons, and I.~L. Turner (2019).
+\newblock {CoastSat: A Google Earth Engine-enabled Python toolkit to extract
+  shorelines from publicly available satellite imagery}.
+\newblock {\em Environmental Modelling \& Software\/}~{\em 122}, 104528.
+
+\bibitem[\protect\citeauthoryear{Vousdoukas, Wziatek, and Almeida}{Vousdoukas
+  et~al.}{2012}]{vousdoukas2012coastal}
+Vousdoukas, M.~I., D.~Wziatek, and L.~P. Almeida (2012).
+\newblock {Coastal vulnerability assessment based on video wave run-up
+  observations at a mesotidal, steep-sloped beach}.
+\newblock {\em Ocean Dynamics\/}~{\em 62}, 123--137.
+
+\end{thebibliography}

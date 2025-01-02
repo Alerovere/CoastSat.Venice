@@ -9,16 +9,20 @@ def generate_random_samples(slope_df, length, seed=None):
     if seed is not None:
         np.random.seed(seed)
     samples = []
-    for _ in range(length):
+    while len(samples) < length:
         transect = slope_df.sample(1)
         lower = transect['CI_Lower'].values[0]
         upper = transect['CI_Upper'].values[0]
         median = transect['Slope'].values[0]
         random_value = np.random.triangular(left=lower, mode=median, right=upper)
-        samples.append({
-            'Transect': transect['Transect'].values[0],
-            'Sampled_Value': random_value
-        })
+        
+        # Filter unrealistic slopes
+        if 0.01 <= random_value <= 0.4:
+            samples.append({
+                'Transect': transect['Transect'].values[0],
+                'Sampled_Value': random_value
+            })
+    
     return pd.DataFrame(samples)
 
 def adjust_bounds(row):
@@ -46,8 +50,13 @@ def beach_slope_plot(slope_df, sampled_df, images_path):
             row['CI_Lower'], row['Slope'], row['CI_Upper'], size=num_samples
         )
         
+        # Filter unrealistic slopes
+        triangular_samples = triangular_samples[
+            (triangular_samples >= 0.001) & (triangular_samples <= 0.9)
+        ]
+        
         # Ensure the array contains valid numeric values
-        if not np.all(np.isfinite(triangular_samples)):
+        if len(triangular_samples) == 0:
             print(f"Invalid values encountered in transect {row['Transect']}")
             continue
         

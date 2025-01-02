@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Report_Template.aux
+The style file: chicago.bst
+Database file #1: references.bib
+Warning--entry type for "chris_leaman_2020_3629949" isn't style-file defined
+--line 61 of file references.bib
+Warning--no journal in alessio_rovere_2024_14543991
+Warning--no number and no volume in alessio_rovere_2024_14543991
+Warning--page numbers missing in alessio_rovere_2024_14543991
+Warning--no number and no volume in ruggiero2001wave
+Warning--page numbers missing in senechal2011wave
+You've used 16 entries,
+            2861 wiz_defined-function locations,
+            720 strings with 8415 characters,
+and the built_in function-call counts, 13946 in all, are:
+= -- 999
+> -- 1432
+< -- 2
++ -- 452
+- -- 462
+* -- 1476
+:= -- 2615
+add.period$ -- 46
+call.type$ -- 16
+change.case$ -- 153
+chr.to.int$ -- 16
+cite$ -- 21
+duplicate$ -- 285
+empty$ -- 664
+format.name$ -- 514
+if$ -- 2556
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 81
+num.names$ -- 160
+pop$ -- 119
+preamble$ -- 1
+purify$ -- 250
+quote$ -- 0
+skip$ -- 282
+stack$ -- 0
+substring$ -- 586
+swap$ -- 91
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 310
+warning$ -- 5
+while$ -- 125
+width$ -- 0
+write$ -- 208
+(There were 6 warnings)
