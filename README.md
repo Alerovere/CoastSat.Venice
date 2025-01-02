@@ -102,9 +102,6 @@ This notebook allows selecteing an area within which wave data from the Copernic
 ### Calculate_Runup.ipynb
 Use the wave, tidal data and slope calculated in the previous steps as inputs to the py-wave-runup tool and calculate maximum and minimum runup values in historical times, coupling wave data to the water level at which the waves impacted the coast. Then, a synthetic runup dataset is calculated by resampling tides and wave data to reproduce one million possible water levels at which waves might impact the coast. This is considered representative of a long-term runup database.
 
-![image](Data/Caleta_Olivia/Runup/img/two_panel_runup.pdf)
-**Runup calculated for historical waves and synthetic wave dataset**
-
 ## Reporting form in LaTeX
 Inside the `Reporting` folder, there is a LaTeX template that writes a simple report on wave runup from the images and data calculated by the script.
 
