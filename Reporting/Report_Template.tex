@@ -4,8 +4,8 @@
 %This document template was created with the assistance of ChatGPT for LaTeX scripting, table generation from CSV files, and figure handling
 
 % Define the name of the site you want to report on and the sitename as defined without spaces
-\newcommand{\sitename}{Caleta Olivia}
-\newcommand{\folder}{Caleta_Olivia}
+\newcommand{\sitename}{Macinaggio}
+\newcommand{\folder}{Macinaggio}
 
 % These folder paths will auto compile
 \newcommand{\csvTidesPath}{../Data/\folder/water_levels/FES2022_location_date_\folder.csv}
@@ -73,7 +73,7 @@ Water level data were extracted at the coordinates and over the period shown in 
 \pagebreak
 
 \section*{Wave data}
-Wave data is retrieved from the Copernicus Marine Environment Monitoring Service (CMEMS) WAVeReanalYSis \citep[WAVERYS,][]{law2021waverys}. WAVERYS takes into account oceanic currents from the GLORYS12 physical ocean reanalysis \citep{lellouche2018recent} and assimilates wave heights from altimetry missions and  directional wave spectra from Sentinel 1 synthetic aperture radar from 2017 onwards. This dataset spans the last \textasciitilde43 years (01 Jan 1980 to 30 Sept 2023). The wave data was sampled at a virtual buoy slightly offshore \sitename \autoref{tab:virtual_buoy}, and the average wave height, period and direction is shown in \autoref{fig:waves_average}.
+Wave data is retrieved from the Copernicus Marine Environment Monitoring Service (CMEMS) WAVeReanalYSis \citep[WAVERYS,][]{law2021waverys}. WAVERYS takes into account oceanic currents from the GLORYS12 physical ocean reanalysis \citep{lellouche2018recent} and assimilates wave heights from altimetry missions and  directional wave spectra from Sentinel 1 synthetic aperture radar from 2017 onwards. This dataset spans the last \textasciitilde43 years (01 Jan 1980 to 30 Sept 2023). The wave data was sampled at a virtual buoy slightly offshore \sitename  \autoref{tab:virtual_buoy}, and the average wave height, period and direction is shown in \autoref{fig:waves_average}.
 
 \begin{table}[ht]
     \centering
@@ -170,7 +170,7 @@ The runup over longer time period (synthetic runup) is shown in \autoref{fig:run
 \begin{figure}[ht]
     \centering
 	\includegraphics[width=\textwidth]{\expandafter\RunupPath/img/two_panel_runup.pdf}
-    \caption{A) Probability density plots representing simulated 2\% wave runup (R2) at \sitename between 1980 and 2024, for waves with directions between NNE and SSE and reaching the coast in tidal conditions from MSL to high tide. Elements measured on the modern shoreline (if present) are plotted as grey lines with labels. Right) Probability density plot representing simulated 2\% wave runup at \sitename for the synthetic dataset, calculated as described in the main text. The grey lines show the 1st, 25th, 50th, 75th and 99th percentiles of this distribution.}
+    \caption{A) Probability density plots representing simulated 2\% wave runup (R2) at \sitename  between 1980 and 2024, for waves with directions perpendicular to the coast and reaching the coast in tidal conditions from MSL to high tide. Elements measured on the modern shoreline (if present) are plotted as grey lines with labels. Right) Probability density plot representing simulated 2\% wave runup at \sitename  for the synthetic dataset. The grey lines show the 1st, 25th, 50th, 75th and 99th percentiles of this distribution.}
 	\label{fig:runup_all}
 \end{figure}
 
